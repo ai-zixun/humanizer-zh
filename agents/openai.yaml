@@ -1,0 +1,4 @@
+interface:
+  display_name: "中文去 AI 味"
+  short_description: "清理翻译腔、套话和机械节奏，让中文更像母语写作"
+  default_prompt: "Use $humanizer-zh to rewrite this Chinese draft so it reads like it was written by a native Chinese speaker."
