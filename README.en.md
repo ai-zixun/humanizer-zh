@@ -6,6 +6,8 @@
 
 This repository uses a single-directory skill layout: the repository root is the skill directory. After publishing it online, users can clone it directly into each agent's skills folder.
 
+Current version: `1.0.0`
+
 ## Use Cases
 
 - Humanizing Chinese blog posts, essays, commentary, product analysis, and newsletters
@@ -38,10 +40,12 @@ The runtime behavior lives in `SKILL.md` and `references/`, not in this README.
 ```text
 humanizer-zh/
 ├── .gitignore
+├── CHANGELOG.md
 ├── LICENSE
 ├── SKILL.md
 ├── README.md
 ├── README.en.md
+├── VERSION
 ├── agents/
 │   └── openai.yaml
 └── references/
@@ -101,6 +105,25 @@ After the repo is published, OpenClaw installations that support GitHub skill in
 openclaw skills install github:<your-user>/humanizer-zh
 ```
 
+## Versioning
+
+- This repository uses Semantic Versioning.
+- The single source of truth for the current version is
+  [VERSION](./VERSION).
+- Release notes live in [CHANGELOG.md](./CHANGELOG.md).
+- For a new release, update `VERSION`, update `CHANGELOG.md`, then
+  create a Git tag.
+
+Example:
+
+```bash
+printf '1.0.1\n' > VERSION
+git add VERSION CHANGELOG.md
+git commit -m "..."
+git tag v1.0.1
+git push origin main --tags
+```
+
 ## Usage
 
 All three platforms use the same runtime entry point, but discovery differs by agent.
@@ -133,6 +156,8 @@ Use humanizer-zh to rewrite this Chinese draft so it reads like native Chinese w
 
 - `SKILL.md` is the runtime entry point
 - `agents/openai.yaml` is Codex-specific UI metadata
+- `VERSION` is the single source of truth for the repository version
+- `CHANGELOG.md` records released changes
 - `references/corpus-quickpick.md` is the runtime fast path for picking a reference voice
 - `references/patterns.md` is loaded on demand for deeper rewrite and diagnosis work
 - `references/corpus.md` is a genre-based reading list for choosing Chinese-native reference voices

@@ -6,6 +6,8 @@
 
 这个仓库采用「单目录即技能包」结构：仓库根目录本身就是技能目录。发布到 GitHub 后，可以直接 clone 到不同代理的 skills 路径中使用。
 
+当前版本：`1.0.0`
+
 ## 适用场景
 
 - 中文博客、专栏、社论、评论稿的去 AI 味改写
@@ -38,10 +40,12 @@
 ```text
 humanizer-zh/
 ├── .gitignore
+├── CHANGELOG.md
 ├── LICENSE
 ├── SKILL.md
 ├── README.md
 ├── README.en.md
+├── VERSION
 ├── agents/
 │   └── openai.yaml
 └── references/
@@ -105,6 +109,23 @@ git clone <your-repo-url> ./skills/humanizer-zh
 openclaw skills install github:<your-user>/humanizer-zh
 ```
 
+## 版本管理
+
+- 仓库使用 Semantic Versioning。
+- 当前版本号只放在 [VERSION](./VERSION)。
+- 版本变更记录放在 [CHANGELOG.md](./CHANGELOG.md)。
+- 发布新版本时，先更新 `VERSION`，再补 `CHANGELOG.md`，最后打 Git tag。
+
+示例：
+
+```bash
+printf '1.0.1\n' > VERSION
+git add VERSION CHANGELOG.md
+git commit -m "..."
+git tag v1.0.1
+git push origin main --tags
+```
+
 ## 使用方式
 
 不同代理的触发方式略有区别，但运行入口都是同一份 `SKILL.md`。
@@ -137,6 +158,8 @@ Use humanizer-zh to rewrite this Chinese draft so it reads like native Chinese w
 
 - `SKILL.md` 是运行时入口，包含触发描述、工作流和输出约定
 - `agents/openai.yaml` 只提供 Codex 的展示元数据，不影响 Claude Code 或 OpenClaw
+- `VERSION` 是仓库唯一版本源
+- `CHANGELOG.md` 记录已发布版本的变化
 - `references/corpus-quickpick.md` 是运行时速查表，先帮模型缩小参照范围
 - `references/patterns.md` 是按需加载的深度参考，不会在每次触发时都占用上下文
 - `references/corpus.md` 是按文体选参照的语料索引，不是固定模仿模板
