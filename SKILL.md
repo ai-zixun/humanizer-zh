@@ -58,6 +58,7 @@ description: Remove signs of AI-generated, translated, or overly mechanical Chin
 - 如果某一段既不推进主线，也不提供必要信息，优先删、并、挪，不要硬留。
 - 结尾要回应前文真正提出的问题，不要临时拔高到更大的时代命题。
 - 深度改写时，可以重排段落顺序，但不要为了工整硬凑成三段论。
+- 总结结构时，少把段落关系写成一串 `先……再……最后……`，更要看它们是不是顺着同一个问题自然往下走。
 
 ### 6. 处理标点和排版
 
@@ -97,6 +98,7 @@ description: Remove signs of AI-generated, translated, or overly mechanical Chin
 - 文本明显带有英文原文结构、营销套话或通稿腔。
 - 需要给出「修改前 / 修改后」示例。
 - 需要检查开头、主体、结尾之间是不是同一条主线。
+- 需要重排整篇结构，先搭一个更自然的文章骨架。
 
 在以下情况，额外读取 [references/corpus.md](references/corpus.md)：
 
