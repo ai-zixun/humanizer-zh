@@ -16,9 +16,12 @@ This repository uses a single-directory skill layout: the repository root is the
 ## Scope
 
 - Detects and rewrites translation artifacts, rigid sentence patterns, and empty big words
+- Detects article-level structure problems, including weak intro/conclusion alignment and off-topic body paragraphs
 - Normalizes punctuation, dates, English term casing, and mixed Chinese/English typography
 - Adjusts rewrite intensity by text type instead of flattening everything into one tone
+- Loads `references/corpus-quickpick.md` for a fast genre/style pick
 - Loads `references/patterns.md` only when a deeper diagnostic rewrite is needed
+- Loads `references/corpus.md` when it needs Chinese-native reference material by genre
 
 ## Compatibility
 
@@ -42,6 +45,8 @@ humanizer-zh/
 ├── agents/
 │   └── openai.yaml
 └── references/
+    ├── corpus-quickpick.md
+    ├── corpus.md
     └── patterns.md
 ```
 
@@ -128,7 +133,9 @@ Use humanizer-zh to rewrite this Chinese draft so it reads like native Chinese w
 
 - `SKILL.md` is the runtime entry point
 - `agents/openai.yaml` is Codex-specific UI metadata
+- `references/corpus-quickpick.md` is the runtime fast path for picking a reference voice
 - `references/patterns.md` is loaded on demand for deeper rewrite and diagnosis work
+- `references/corpus.md` is a genre-based reading list for choosing Chinese-native reference voices
 
 ## Acknowledgements
 
