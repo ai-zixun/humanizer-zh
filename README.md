@@ -16,9 +16,12 @@
 ## 能力范围
 
 - 识别并改写翻译腔、结构腔、排版腔和判断腔
+- 识别并校正文级结构问题，检查开头、主体、结尾是否服务同一条主线
 - 统一中文引号、日期、英文术语大小写与排版细节
 - 根据文本类型调整改写力度，避免把说明文硬改成抒情文
 - 深度改写时按需读取 `references/patterns.md`，解释常见问题模式
+- 快速选择中文参照时，先读 `references/corpus-quickpick.md`
+- 需要找中文母语参照时，按需读取 `references/corpus.md`
 
 ## 兼容性
 
@@ -42,6 +45,8 @@ humanizer-zh/
 ├── agents/
 │   └── openai.yaml
 └── references/
+    ├── corpus-quickpick.md
+    ├── corpus.md
     └── patterns.md
 ```
 
@@ -132,7 +137,9 @@ Use humanizer-zh to rewrite this Chinese draft so it reads like native Chinese w
 
 - `SKILL.md` 是运行时入口，包含触发描述、工作流和输出约定
 - `agents/openai.yaml` 只提供 Codex 的展示元数据，不影响 Claude Code 或 OpenClaw
+- `references/corpus-quickpick.md` 是运行时速查表，先帮模型缩小参照范围
 - `references/patterns.md` 是按需加载的深度参考，不会在每次触发时都占用上下文
+- `references/corpus.md` 是按文体选参照的语料索引，不是固定模仿模板
 
 ## 设计约束
 

@@ -14,13 +14,15 @@ description: Remove signs of AI-generated, translated, or overly mechanical Chin
 
 1. 先判断文本类型。
    博客、专栏、书稿、评论、产品分析可以更有节奏和作者判断；公告、说明文、技术文档则优先保留准确和克制。
-2. 先找最显眼的 AI 痕迹。
+2. 先看文章主线。
+   判断第一段在立什么题，主体每段各自承担什么功能，最后一段是不是在收同一件事。
+3. 先找最显眼的 AI 痕迹。
    重点看英文句法直译、机械对照句、空泛结论、列表堆砌、连环冒号、破折号、过度工整的段落节奏。
-3. 再决定改写力度。
+4. 再决定改写力度。
    轻度润色只清理措辞和标点；深度改写要重排句子顺序、合并弱句、补足主语或因果关系。
-4. 保留作者原意。
+5. 保留作者原意。
    不擅自补充事实，不把谨慎判断写成绝对论断，不把普通结论硬拔高成时代宣言。
-5. 做最后一遍朗读检查。
+6. 做最后一遍朗读检查。
    读起来要像中文原生写作，不像英文思路换成中文词汇。
 
 ## Core Rules
@@ -49,7 +51,15 @@ description: Remove signs of AI-generated, translated, or overly mechanical Chin
 - 让句子有明确主语和动作，少写无主句串联。
 - 避免段落结尾总是落在大而空的价值判断上。
 
-### 5. 处理标点和排版
+### 5. 管住文章级结构
+
+- 开头要尽快立题，不要第一段说 A，后面一路滑到 B。
+- 主体段落各自要有功能，常见功能是：交代背景、提出判断、展开论据、举例、转折、收束。
+- 如果某一段既不推进主线，也不提供必要信息，优先删、并、挪，不要硬留。
+- 结尾要回应前文真正提出的问题，不要临时拔高到更大的时代命题。
+- 深度改写时，可以重排段落顺序，但不要为了工整硬凑成三段论。
+
+### 6. 处理标点和排版
 
 - 正文引号使用 `「」`，不用英文双引号 `""`。
 - 不使用长破折号 `——`，优先改成逗号、句号或拆句。
@@ -59,7 +69,7 @@ description: Remove signs of AI-generated, translated, or overly mechanical Chin
 - 并列英文术语用斜杠连接时，不在斜杠两侧加空格，如 `coworkers/agents`。
 - 英文品牌名使用官方大小写，如 `YouTube`、`OpenAI`、`GitHub`。
 
-### 6. 统一常见术语和日期
+### 7. 统一常见术语和日期
 
 - `token` 保持英文。
 - `API` 保持英文。
@@ -67,7 +77,7 @@ description: Remove signs of AI-generated, translated, or overly mechanical Chin
 - 数字日期写作 `2026 年 2 月 26 日`、`2 月 5 日`。
 - 中文月份叙事写作 `一月`、`二月`。
 
-### 7. 控制判断强度
+### 8. 控制判断强度
 
 - 不轻易下「完全取代」「彻底结束」「只剩一种可能」这类极端结论。
 - 不做无依据的阴谋论推断、资本市场臆测或人物动机脑补。
@@ -86,6 +96,16 @@ description: Remove signs of AI-generated, translated, or overly mechanical Chin
 - 需要解释「为什么这段中文有 AI 味」。
 - 文本明显带有英文原文结构、营销套话或通稿腔。
 - 需要给出「修改前 / 修改后」示例。
+- 需要检查开头、主体、结尾之间是不是同一条主线。
+
+在以下情况，额外读取 [references/corpus.md](references/corpus.md)：
+
+- 需要判断这段中文更接近哪类母语写法。
+- 用户明确要求「改得像博客或书里写的」。
+- 需要给技术文、评论文、演讲稿分别找不同参照。
+- 需要避免把强个人腔调误当成通用中文。
+
+如果只是需要快速选一个参照，先读取 [references/corpus-quickpick.md](references/corpus-quickpick.md)，不够再读完整的 [references/corpus.md](references/corpus.md)。
 
 ## Output
 
@@ -100,6 +120,8 @@ description: Remove signs of AI-generated, translated, or overly mechanical Chin
 交付前逐项确认：
 
 - 读起来像中文作者在写，不像翻译后的英文。
+- 第一段提出的问题，最后一段确实有回应。
+- 主体段落都在服务主线，没有明显跑题段或重复段。
 - 句子之间有自然推进，不靠模板连接词硬粘。
 - 结论不过火，判断和事实强度匹配。
 - 标点、术语、日期和品牌大小写统一。
